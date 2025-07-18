@@ -1,6 +1,7 @@
-# React + TypeScript + Vite
+<img width="765" height="1177" alt="Screenshot 2025-07-18 at 6 56 23 PM" src="https://github.com/user-attachments/assets/c42cb061-3970-45bb-acd6-4557e9cba0fc" /># React + TypeScript + Vite
 Tickets are rendering
-![Uploading Screenshot 2025-07-18 at 6.56.23 PM.png…]()
+
+
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
