@@ -16,7 +16,7 @@ const Input: React.FC<InputProps> = ({ type = 'text', placeholder, value, onChan
       onChange={onChange}
       style={{
         padding: '8px 12px',
-        border: '1.2px solid #ccc',
+        border: '1px solid #ccc',
         borderRadius: '6px',
         width: '100%',
         marginBottom: '12px'

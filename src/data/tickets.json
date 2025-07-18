@@ -1,0 +1,30 @@
+[
+    {
+      "id": 1,
+      "title": "Login issue",
+      "description": "Unable to login with valid credentials",
+      "status": "Open",
+      "priority": "High",
+      "assignee": "Agent A",
+      "createdAt": "2025-07-17T10:00:00Z"
+    },
+    {
+      "id": 2,
+      "title": "Page not loading",
+      "description": "Dashboard page is stuck on loading",
+      "status": "In Progress",
+      "priority": "Medium",
+      "assignee": "Agent B",
+      "createdAt": "2025-07-16T09:30:00Z"
+    },
+    {
+      "id": 3,
+      "title": "Feature request",
+      "description": "Add dark mode to the platform",
+      "status": "Closed",
+      "priority": "Low",
+      "assignee": "Agent C",
+      "createdAt": "2025-07-15T08:15:00Z"
+    }
+  ]
+  
