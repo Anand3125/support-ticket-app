@@ -147,9 +147,9 @@ const CreateTicketForm: React.FC = () => {
           color="primary"
           fullWidth
           sx={{ mt: 2 }}
-          disabled={isSubmitting || mutation.isLoading}
+          disabled={isSubmitting || mutation.status === 'pending'}
         >
-          {mutation.isLoading ? 'Creating...' : 'Create Ticket'}
+          {mutation.status === 'pending' ? 'Creating...' : 'Create Ticket'}
         </Button>
       </form>
       <Snackbar

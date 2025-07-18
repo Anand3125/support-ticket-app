@@ -5,6 +5,7 @@ import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import Box from '@mui/material/Box';
 import { useThemeToggle } from './context/ThemeContext';
+import CreateTicketForm from './pages/CreateTicketForm';
 
 // Optionally import these if you're using them somewhere else
 // import Button from './components/Button';
@@ -17,7 +18,7 @@ function App() {
 
   return (
     <Box sx={{ position: 'relative', minHeight: '100vh' }}>
-      <Box sx={{ position: 'absolute', top: 16, right: 16 }}>
+      <Box sx={{ position: 'absolute', top: 96, right: 16, zIndex: 1201 }}>
         <Tooltip title={mode === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}>
           <IconButton onClick={toggleTheme} color="inherit">
             {mode === 'light' ? <Brightness4Icon /> : <Brightness7Icon />}
@@ -25,6 +26,7 @@ function App() {
         </Tooltip>
       </Box>
       <h1>Ticket Management System</h1>
+      <CreateTicketForm />
       <TicketList />
     </Box>
   );
