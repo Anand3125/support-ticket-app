@@ -1,4 +1,7 @@
-<img width="765" height="1177" alt="Screenshot 2025-07-18 at 6 56 23 PM" src="https://github.com/user-attachments/assets/c42cb061-3970-45bb-acd6-4557e9cba0fc" /># React + TypeScript + Vite
+
+
+
+TypeScript + Vite
 Tickets are rendering
 
 
@@ -111,3 +114,5 @@ docker stop <container_id>
 ---
 
 For more details, see the Dockerfile and nginx.conf in the project root.
+
+<img width="765" height="1177" alt="Screenshot 2025-07-18 at 6 56 23 PM" src="https://github.com/user-attachments/assets/c42cb061-3970-45bb-acd6-4557e9cba0fc" /># React + TypeScript + Vite
