@@ -37,7 +37,7 @@ interface AuthContextType extends AuthState {
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 // Simulate API login
-const mockLoginApi = async (username: string, password: string): Promise<{ token: string; role: UserRole; user: string }> => {
+const mockLoginApi = async (username: string): Promise<{ token: string; role: UserRole; user: string }> => {
   // Simulate network delay
   await new Promise((res) => setTimeout(res, 500));
   // Assign role based on username for demo
@@ -50,7 +50,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [state, setState] = useState<AuthState>({ user: null, token: null, role: null });
 
   const login = async (username: string, password: string) => {
-    const { token, role, user } = await mockLoginApi(username, password);
+    const { token, role, user } = await mockLoginApi(username);
     setState({ user, token, role });
   };
 

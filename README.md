@@ -70,3 +70,44 @@ export default tseslint.config([
   },
 ])
 ```
+
+## 🚀 Running with Docker
+
+### 1. Build the Docker image
+
+```bash
+docker build -t support-ticket-app .
+```
+
+### 2. Run the Docker container (default: port 8080)
+
+```bash
+docker run -p 8080:80 support-ticket-app
+```
+
+- The app will be available at: [http://localhost:8080](http://localhost:8080)
+- Example: [http://localhost:8080/login](http://localhost:8080/login)
+
+### 3. Change the exposed port (optional)
+
+If you want to use a different port (e.g., 3000), change the first number in the `-p` flag:
+
+```bash
+docker run -p 3000:80 support-ticket-app
+```
+
+- The app will now be available at: [http://localhost:3000](http://localhost:3000)
+
+### 4. Stopping the container
+
+Press `Ctrl+C` in the terminal where the container is running, or use:
+
+```bash
+docker ps  # find your container ID
+# then
+docker stop <container_id>
+```
+
+---
+
+For more details, see the Dockerfile and nginx.conf in the project root.
