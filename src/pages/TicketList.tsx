@@ -9,12 +9,18 @@ import {
   MenuItem,
   Box,
   Typography,
+  Pagination,
 } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+
+const TICKETS_PER_PAGE = 5;
 
 const TicketList: React.FC = () => {
   const [tickets, setTickets] = useState<Ticket[]>([]);
   const [statusFilter, setStatusFilter] = useState<string>('All');
   const [priorityFilter, setPriorityFilter] = useState<string>('All');
+  const [page, setPage] = useState<number>(1);
+  const navigate = useNavigate();
 
   useEffect(() => {
     setTickets(ticketsJson as Ticket[]);
@@ -25,6 +31,18 @@ const TicketList: React.FC = () => {
     const priorityMatch = priorityFilter === 'All' || ticket.priority === priorityFilter;
     return statusMatch && priorityMatch;
   });
+
+  // Pagination logic
+  const pageCount = Math.ceil(filteredTickets.length / TICKETS_PER_PAGE);
+  const paginatedTickets = filteredTickets.slice(
+    (page - 1) * TICKETS_PER_PAGE,
+    page * TICKETS_PER_PAGE
+  );
+
+  // Reset to page 1 if filters change
+  useEffect(() => {
+    setPage(1);
+  }, [statusFilter, priorityFilter]);
 
   return (
     <Box sx={{ padding: '2rem' }}>
@@ -62,9 +80,20 @@ const TicketList: React.FC = () => {
         </FormControl>
       </Box>
 
-      {filteredTickets.map((ticket) => (
-        <TicketCard key={ticket.id} ticket={ticket} />
+      {paginatedTickets.map((ticket) => (
+        <TicketCard key={ticket.id} ticket={ticket} onClick={() => navigate(`/ticket/${ticket.id}`)} />
       ))}
+
+      {pageCount > 1 && (
+        <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}>
+          <Pagination
+            count={pageCount}
+            page={page}
+            onChange={(_, value) => setPage(value)}
+            color="primary"
+          />
+        </Box>
+      )}
     </Box>
   );
 };
