@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ticketsJson from '../data/tickets.json';
 import TicketCard from '../components/TicketCard';
-import type { Ticket } from '../types/ticket';
+import type { Ticket } from '../slices/ticketsSlice';
 import {
   FormControl,
   InputLabel,
@@ -12,19 +12,26 @@ import {
   Pagination,
 } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import { useAppSelector, useAppDispatch } from '../store/hooks';
+import { setTickets } from '../slices/ticketsSlice';
 
 const TICKETS_PER_PAGE = 5;
 
 const TicketList: React.FC = () => {
-  const [tickets, setTickets] = useState<Ticket[]>([]);
+  const dispatch = useAppDispatch();
+  const tickets = useAppSelector((state) => state.tickets.tickets);
   const [statusFilter, setStatusFilter] = useState<string>('All');
   const [priorityFilter, setPriorityFilter] = useState<string>('All');
   const [page, setPage] = useState<number>(1);
   const navigate = useNavigate();
 
   useEffect(() => {
-    setTickets(ticketsJson as Ticket[]);
-  }, []);
+    // Only set tickets if not already loaded
+    if (tickets.length === 0) {
+      dispatch(setTickets(ticketsJson as Ticket[]));
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [dispatch]);
 
   const filteredTickets = tickets.filter(ticket => {
     const statusMatch = statusFilter === 'All' || ticket.status === statusFilter;
