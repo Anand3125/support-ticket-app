@@ -28,7 +28,7 @@ function App() {
           </Tooltip>
         </Box>
         <h1>Ticket Management System</h1>
-        <CreateTicketForm />
+       
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route element={<ProtectedRoute />}>
@@ -39,6 +39,7 @@ function App() {
             <Route path="/admin" element={<AdminDashboard />} />
           </Route>
         </Routes>
+        <CreateTicketForm />
       </Box>
     </BrowserRouter>
   );
