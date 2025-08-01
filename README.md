@@ -3,9 +3,9 @@
 
 
 TypeScript + Vite
-=======
+
 <img width="765" height="1177" alt="Screenshot 2025-07-18 at 6 56 23 PM" src="https://github.com/user-attachments/assets/c42cb061-3970-45bb-acd6-4557e9cba0fc" /># React + TypeScript + Vite
->>>>>>> d82d795d493e9321c6f346a859e815af9125ead1
+
 Tickets are rendering
 
 
@@ -15,7 +15,7 @@ Tickets are rendering
 on Docker this image is running-
 <img width="1303" height="740" alt="Screenshot 2025-07-21 at 5 01 25 AM" src="https://github.com/user-attachments/assets/a16e2e58-4a5f-49c0-bcac-a1f89d7e2d37" />
 
->>>>>>> d82d795d493e9321c6f346a859e815af9125ead1
+
 ## 🚀 Running with Docker
 
 ### 1. Build the Docker image
@@ -61,4 +61,3 @@ For more details, see the Dockerfile and nginx.conf in the project root.
 <img width="765" height="1177" alt="Screenshot 2025-07-18 at 6 56 23 PM" src="https://github.com/user-attachments/assets/c42cb061-3970-45bb-acd6-4557e9cba0fc" /># React + TypeScript + Vite
 =======
 
->>>>>>> d82d795d493e9321c6f346a859e815af9125ead1
